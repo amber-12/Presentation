@@ -1,0 +1,1 @@
+Data_engineer = load '/h1b_final/' using PigStorage() as (sr_no:chararray,case_status:chararray,employer_name:chararray,soc_name:chararray,job_title:chararray,full_time_position:chararray,prevailing_wages:double,)

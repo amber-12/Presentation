@@ -1,0 +1,75 @@
+InputStream
+
+Java application uses an input stream to read data from a source, it may be a file, an array, peripheral device or socket.
+InputStream class is an abstract class. It is the super class of all classes representing an input stream of bytes.
+
+
+Java FileInputStream Class
+
+Java FileInputStream class obtains input bytes from a file.
+It is used for reading byte-oriented data (streams of raw bytes) such as image data, audio, video etc. You can also read character-stream data.
+But, for reading streams of characters, it is recommended to use FileReader class.
+
+Java FilterInputStream Class
+
+Java FilterInputStream class implements the InputStream. It contains different sub classes as BufferedInputStream, DataInputStream for providing additional functionality. So it is less used individually.
+Java FilterInputStream class declaration.
+Let's see the declaration for java.io.FilterInputStream class.
+public class FilterInputStream extends InputStream.
+
+
+Java BufferedInputStream Class
+
+Java BufferedInputStream class is used to read information from stream. It internally uses buffer mechanism to make the performance fast.
+The important points about BufferedInputStream are:
+When the bytes from the stream are skipped or read, the internal buffer automatically refilled from the contained input stream, many bytes at a time.
+When a BufferedInputStream is created, an internal buffer array is created.
+
+
+Java BufferedReader Class
+
+Java BufferedReader class is used to read the text from a character-based input stream.
+ It can be used to read data line by line by readLine() method. It makes the performance fast. It inherits Reader class.
+
+
+Java FileReader Class
+
+Java FileReader class is used to read data from the file. It returns data in byte format like FileInputStream class.
+It is character-oriented class which is used for file handling in java.
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+OutputStream
+
+Java application uses an output stream to write data to a destination, it may be a file, an array, peripheral device or socket.
+
+
+Java FileOutputStream Class
+
+Java FileOutputStream is an output stream used for writing data to a file.
+If you have to write primitive values into a file, use FileOutputStream class. You can write byte-oriented as well as character-oriented data through FileOutputStream class. But, for character-oriented data, it is preferred to use FileWriter than FileOutStream.
+
+
+Java BufferedOutputStream Class
+
+Java BufferedOutputStream class is used for buffering an output stream. It internally uses buffer to store data. It adds more efficiency than to write data directly into a stream. So, it makes the performance fast.
+For adding the buffer in an OutputStream, use the BufferedOutputStream class. Let's see the syntax for adding the buffer in an OutputStream:
+
+
+Java FilterOutputStream Class
+
+Java FilterOutputStream class implements the OutputStream class.
+ It provides different sub classes such as BufferedOutputStream and DataOutputStream to provide additional functionality. So it is less used individually.
+
+
+Java BufferedWriter Class
+
+Java BufferedWriter class is used to provide buffering for Writer instances.
+It makes the performance fast. It inherits Writer class. The buffering characters are used for providing the efficient writing of single arrays, characters, and strings.
+
+
+Java FileWriter Class
+
+Java FileWriter class is used to write character-oriented data to a file. It is character-oriented class which is used for file handling in java.
+Unlike FileInputStream class, you don't need to convert string into byte array because it provides method to write string directly.
+
+

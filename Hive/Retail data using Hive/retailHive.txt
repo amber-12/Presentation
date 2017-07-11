@@ -1,0 +1,116 @@
+ 
+A)Find out the customer I.D for the customer who has spent the maximum amount in a month and in all the 4 months. 
+Answer would be - total 5 customer IDs
+1) One for each month
+2) One for all the 4 months.
+
+ans---- for 4 month
+
+create table retail4month(tran_dt string,custno string,age string,pin string,category string,product string,qty int,cost bigint,sales bigint) row format delimited fields terminated by '\;' stored as textfile;
+
+
+ load data local inpath '/home/hduser/Retail Data' into table retail4month; 
+
+
+select custno,sum(sales) as total_sales from retail4month group by custno order by total_sales desc limit 1;
+
+
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 110644406 HDFS Write: 0 SUCCESS
+Stage-Stage-2:  HDFS Read: 110644406 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+01622362  	459771
+Time taken: 8.773 seconds, Fetched: 1 row(s)
+
+
+
+
+B)Find out the top 4 or top 10 product being sold in the monthly basis and in all the 4 months.. Criteria for top should be sales amount
+
+
+
+ans--Top 10
+
+ select product,sum(sales) as Top10Sales from retail4month group by product order by top10Sales desc limit 10;
+
+
+
+Total MapReduce CPU Time Spent: 0 msec
+OK
+8712045008539	1540503
+4710628131012	675112
+4710114128038	514601
+4711588210441	491292
+20553418     	470501
+4710628119010	433380
+4909978112950	432596
+8712045000151	428530
+7610053910787	392581
+4719090900065	385626
+Time taken: 7.309 seconds, Fetched: 10 row(s)
+
+ans-----Top 4
+
+
+ select product,sum(sales) as Top4Sales from retail4month group by product order by top4Sales desc limit 4;
+
+
+
+Total MapReduce CPU Time Spent: 0 msec
+OK
+8712045008539	1540503
+4710628131012	675112
+4710114128038	514601
+4711588210441	491292
+Time taken: 7.309 seconds, Fetched: 4 row(s)
+
+
+
+
+
+C)Find out the top 5 viable products and the top 5 product subclass for the age group A, B, C etc..... Data should be taken for all the 4 months
+ 
+ans---- top 5 product agewise
+
+hive> select product,age,sum(sales) as Top5P_agewise from retail4month group by product,age order by Top5P_agewise desc limit 5;
+
+
+2017-06-12 07:40:51,547 Stage-2 map = 100%,  reduce = 0%
+2017-06-12 07:40:52,569 Stage-2 map = 100%,  reduce = 100%
+Ended Job = job_local5798426_0004
+MapReduce Jobs Launched: 
+Stage-Stage-1:  HDFS Read: 221288812 HDFS Write: 0 SUCCESS
+Stage-Stage-2:  HDFS Read: 221288812 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+8712045008539	D 	510868
+4711588210441	A 	446185
+8712045008539	C 	369511
+8712045008539	B 	250644
+4710628131012	D 	220911
+Time taken: 8.328 seconds, Fetched: 5 row(s)
+
+
+ans---top 5 catagory agewise
+
+hive> select category,age,sum(sales) as Top5C_agewise from retail4month group by category,age order by Top5C_agewise desc limit 5;
+
+
+Stage-Stage-1:  HDFS Read: 110644406 HDFS Write: 0 SUCCESS
+Stage-Stage-2:  HDFS Read: 110644406 HDFS Write: 0 SUCCESS
+Total MapReduce CPU Time Spent: 0 msec
+OK
+560402	D 	1881442
+560201	C 	1450574
+560402	C 	1322471
+560201	D 	1286811
+560402	B 	954718
+Time taken: 7.137 seconds, Fetched: 5 row(s)
+
+
+
+
+
+
+

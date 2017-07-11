@@ -1,0 +1,655 @@
+                                 Algorithm
+___________________________________________________________________________________________________________________________
+Q.1 WAP student details studying in bsc computer
+	(student number,name,DOB,)
+      -check how many student are eligible to get admission in professional course if criteria
+       is having age>21 and mark percentage >=80.
+
+step 1- start
+
+step 2- Collect details of student studying in BSC computer.
+	(Student name,Number,DOB,Mark of 3 subject).
+
+step 3- Calculate age of all student.
+
+step 4- Make total mark of 3 subject of each student.
+
+step 5- calculate percentage of each student.
+
+step 6- Check how many students age > 21.
+	check how many students pecentage >=80.
+
+step 7- if both conditions are true then they are eligible for Professional deploma course.
+
+step 8- Display List of eligible student.
+
+step 9- stop.
+____________________________________________________________________________________________
+
+Q.2 WAP collect details below
+	(PNR,passanger name,number,flight number,flight date)
+	1)analyse data to get details of frequently flyer if passanger is flying 3 times in 1
+          quarter then he has been awarded as frequent flyer and get 10% discount on next flight 
+step 1- Start.
+
+step 2- Collects details of Flyers from last 3 months.
+        (PNR,Passenger name,flight number,flight date)
+
+step 3- Check details of frequently Flyers.
+
+step 4- check passangers who is flying 3 or more than 3 time in quarter.
+
+step 5- if above two condition is true then give them as reward 10% off on next flight.
+
+step 6- display name of passenger who will get reward.
+
+step 7- stop.
+
+______________________________________________________________________________________________
+Q.3 WAP to accept transaction details of an E-commerce web site.
+	(customer id,name,DOB,profession,Income,country,city,product name,Id,price,purchase date)
+	1)analyse total sales between 25 dec to 1st jan.
+	2)age of customer who spent maximum amount.
+	3)country of customer who spent maximum amount.
+	4)total sales made by customer who is having income geater than 1 lac per month.
+	5)average age group who made sales between 25 dec 1 jan.
+
+step 1- start.
+
+step 2- collect transaction  details of customers between 25 dec to 1st jan.
+	(Customer ID,name,DOB,Profession,income,country,city,product name,id,qty,price,purchase date)
+
+step 3- Analyse total sales between 25 dec to 1st jan.
+
+step 4- calculate age of customers.
+
+step 5- check who spent maximum amount.
+
+step 6- make a list of countrywise customers,who spent maximum amount.
+
+step 7- check profession of customer and make a list of them who spent maximum amount.
+
+step 8- check how many customers income > 1 lac.
+
+step 9- make total sales made by customers whos income > 1 lac.
+
+step 10- calculate average age of customers who made sales betweeen 25 dec to 1st jan.
+
+step 11- stop.
+
+_______________________________________________________________________________________________
+Q.4 WAP algorithm to accept below data of OIL company
+	(Distributed Id,Name,OIL alloted month,OIL alloted date)
+	1)details of distributed who has been alloted maximum oil in month.
+	2)details of distributor who sold maximum oil in month.
+	3)details of distributor who sell only 50% oil.
+step 1- start.
+
+step 2- Collect data of OIL company for month.
+	(Distributor ID,Distributor Name,oil alloted/month,oil alloted date,oil sold)
+
+step 3- Collect list of distributors in detail.
+
+step 4- Make list of distributors who has been alloted maximum oil in month.
+
+step 5- Check distributor who sold maximum oil in month.
+
+step 6- Display list of distributors who sold maximum oil in month.
+
+step 7- Check who sold only 50% of oil.
+
+step 8- Display list of distributors who sell only 50% of iol in month.
+
+step 9- Stop
+_______________________________________________________________________________________________
+
+Q.5 What is static ? why it is used?
+     - static keyword used in java with member function and member variable of class so you 
+	can call it without using object.
+     -Whenever we want to make any function or variable independant of class.
+     -we can not use non static member inside static function.
+     -whenever we want to set global value for any object which is not dependent upon any instance
+      of class.
+     -static variable is used to retain memory between every object it does not create seprate 
+	space in in each object.
+_________________________________________________________________________________________________
+
+Q.6 what is access specifier?
+     -Access specifier are keyword in object oriented language that set accessibility of class
+	method and other method.
+     - there are 4 access specifiers.
+     1)default
+	    :- variable or method declare without any access contril modifier is avaiable to
+		any other class.
+     2)public 
+	    :- can acessed from any other class.
+     3)private
+	    :- it can accessiable to only that class.
+     4)protected
+	    :- can be accessiable only by subclass in package.
+
+_________________________________________________________________________________________________
+
+Q.7 what is array?
+    - Collection of similler data element that belongs to same data type.it is an continious
+	memory block which is used to store fixed amount of data.
+    - it is used to optimise the performance of data usage inside the application.
+    - we can access data randomly from any location.
+    - we require array when there is multiple variable of same data type then that time we require
+      array.
+	we can declare array 
+	data_type variable_name = new data_type[size];
+    - array contain fixed size element. 
+    - array indexing start from 0 to n.
+_________________________________________________________________________________________________
+
+Q.8 what is wrapper class and why it is require?
+     -it is an machanism to convert primitives into object and object into primitives.
+      it is also callled as boxing and unboxing.
+     -All Wrapper class is immutable.
+     - We require wrapper class when we want to represent primitive in form of object so that
+       we handle primitives just like object.
+	Data_type	                 Wrapper class
+___________________________________________________________
+	byte                             Byte
+	short				 Short
+	int                              Integer
+	long                             Long
+	float                            Float  
+	double                           Double
+	char			         Character
+	boolean                          Boolean
+________________________________________________________________________________________________________________
+Q.9 What is Algorithm?
+    - Algorithm is step by step procidure for solving problems based on sequence specified by action.
+    - It is step by step procidure to accomplish task.
+    -Algorithm first step should be START.and last step should be STOP.
+________________________________________________________________________________________________________________________
+Q.9 What is flow chart?
+    -Flow chart is graphical representation of process each step in process is represented by different symbol
+     and contains short discription of process step.	
+    -Flow chart symbols are linked together with arrow showing the process flow direction.
+    - it uses simple geomatric symbols and arrow to define relationship.
+    -there are different geomatric symbol such as
+     1)oval-for begin/end.
+     2)rectangle- assignment statement.
+     3)parallelogram- I/O data symbol.
+     4)rhymbos- Decision making symbol.
+     5)arrow- relationship.
+_________
+
+Q.10 What is condition and looping and how they help in applaying logic?
+     -decision making is used specify the order in which statement are executed
+     -Ability to control flow of program letting it make decision on what code to execute.
+     -there are differnt conditional statement
+        if,if else,nested if else.
+     -loop means repetative task of execution it means that it repeat statement while given condition is true.
+       there different looping statements.
+         while loop,do-while loop,for loop.
+___________________________________________________________________________________________________________________________
+Q.11  What is operator?why it is required?
+
+	- Operator is special symbol that tells compiler to do certain operation like
+	   manupulation mathematical and logical.
+
+	- Operator is used in program to manipulate data and variables.
+
+	- if we want to do addition of two numbers then we required "+" operator.without 
+	  using addition(+) operator we can not get addition of two numbers.
+
+	- there are different types of operator in java
+	
+	1.arithmatical operator.
+	2.Logical operator.
+	3.relational operator.
+	4.assingment.
+	5.relational assignment.
+
+Q.12 what is looping construct ? why it is req?
+
+	-Loop is sequence of instruction that is countinually repeated until condition
+	 becomes false.
+	
+	-Loop statement allows us to execute statement or group of statement multiple times.
+	
+	-we require looping bacause you may encounter situation when block of statement execute 
+	 several times.
+
+	-eg.
+		if we want print to 1 to 100 numbers so it is very easy to print using loop
+		 you take condition in any loop condtion like that i=1 while(i<=100) then 
+		print i variable using output finction then increament i. it repeat statement 
+		till condition becomes false.
+	
+	- Loop play vital role in programing.it makes programm shorter and simplier.
+
+Q.13 what are different phases of looping?
+	
+	-  There are three phases of looping
+	1.while loop.
+	2.Do while loop.
+	3.for loop.
+	
+	1.while loop- In while loop first it check the condition if condition is true
+	   		then it execute statement.
+	
+	2.Do while loop- in this first it execute statement then it check body of loop.
+
+	3.for loop- In for loop is different from both above mentioned in for first it 
+			initialize then check condition then execute statement then variable
+		    increamented or decreamented.
+  
+
+
+Q.14  what is differance bitween while,Do_while and for loop?
+
+	-While loop
+		:-while loop is an entry control loop.in while loop first  it check condition if
+		  condition is true then it will execute body of loop.again it will check condition
+		  if condition is true then it will execute body this process till continue when 
+		  condition becomes false.if condition becomes false then it does not execute body.
+		 -we use while loop when we dont know what exact time to execute body of loop.
+		Syntax
+                     :-
+			while(condition)
+		 	{
+				statement;
+			       increament/decreament;
+			}
+	-Do while
+		:-it is an exit control loop.it does not check the condition directly execute 
+		  statement then at last it check condition.
+		  In do while loop statement execute or body of loop will execute atlist once.
+		  It doesn matter condtion false or true it will execute body of loop atlist
+		  once.
+		 Syntax
+		     :-
+			Do
+			{
+			 Statement;
+			inreament/decreament.
+			}while(condition);
+	
+	-for loop
+		:-for loop is an entry control loop first it check condition if condition is true 
+		   then only execute body of loop.this process still continue upto condition becomes
+		  false.
+		 Syntax
+			:- 
+			for(initilisation;condition;increament/decreament)
+				{
+				Statement;
+				}
+
+_____________________________________________________________________________________________________________________________
+Q.15 what is constructor?
+    -it is used to initialize member variable in class.
+    - every time you create a instance of class it has to be initialize to support its usage and to 
+      initialize the instance of class.
+    -any class which is created by default support constructor weather it is created inside the program
+     or not.
+     properties.
+    - it is special function.
+    - because name of constructor same as class name.
+    -this is function has no return type.
+    -it should be always public.
+    - there are two types of constructor parameterised and default.
+    - As per rule base class constructor get executed first.if we do not call any base class constructor
+      in child class.
+	  declaration
+     access specifier class_name();
+________________________________________________________________________________________________
+Q.16 what is function overriding?
+    - Whenever we use base class function inside child class to implement same functionality with
+      different value is called as function overriding.
+    - In function overriding function name are same but definamtions of both function different.
+    - any mathod declare with final and static keyword can not be override.
+________________________________________________________________________________________________
+Q.17 what is function overloading?
+    - method declare multiple times with same name and different parameter is called as overloading.
+    - we can differentiat method by parameters that is (NTS)
+      number of parameter,types of parameter,sequence of parameter
+________________________________________________________________________________________________
+Q.18 what is inheritance?
+    - deriving class from existing class is called as inheritance.we can inherit all properties of
+      parent class into child class.
+    - Inheritance helps programmer in generalization and specialization.general properties are 
+      part of base class and special properties are part of child class.
+    - we can inherit one class from another by extend keyword.
+___________________________________________________________________________________________________
+Q.19 what is interface?
+    -interface is collection of abstract class.interface used to support abstraction as wll as
+      multiple inheritance.
+    -interface contain method without body and body of method can written inside class.
+    -Interface contain only static and final variable.
+___________________________________________________________________________________________________
+Q.20 what is return type of function?
+    -return type is the function may return a value.the return type is the data type of the value
+     the function return there are different return type such as int,float,void,string,char etc.
+___________________________________________________________________________________________________
+Q.21 what is void?
+    -In computer programming, when void is used as a function return type, it indicates that the function 
+     does not return a value.
+    -Void functions, also called nonvalue-returning functions, are used just like value-returning functions
+     except void return types do not return a value when the function is executed.
+_____________________________________________________________________________________________________                              
+			    EXCEPTION HANDLING program
+
+Q.1 WAP in java to create user defined exception which will accept employee details salary as input
+    1)if salary is less than 0 display message you are not eleigible for loan.
+    2)if salary is greater than 10000 display massage you are eligible for loan of 100000,
+    3)if salary is grater than 50000 display that you are eligible for 500000 loan.
+    4)if salary is grater than 100000 display that you are eligible for 1000000 loan.
+
+public class SalaryException extends Exception {
+	
+	public SalaryException(String s)
+	{
+		super(s);
+	}
+
+	public String tostring()
+	{
+		return "Loan could not be sanction";
+	}
+}
+
+import java.util.Scanner;
+
+public class LoanException {
+	
+	
+	public void grantloan(int S) throws SalaryException
+	{
+		if(S<=0)
+		{
+			throw new SalaryException("Not eligible for Loan:: insuficient balance");
+		}
+		else if(S>=10000 && S<50000)
+		{
+			throw new SalaryException("you are eligible for 100000lac Loan");
+		}
+		else if(S>=50000 && S<100000)
+		{
+			throw new SalaryException("you are eligible for 500000lac Loan");
+		}
+		else if(S>100000)
+		{
+			throw new SalaryException("you are eligible for 1000000lac Loan");
+		}
+	}
+	
+
+	public static void main(String[] args) {
+		
+		// TODO Auto-generated method stub
+		
+		int salary;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter salary of employee");
+		salary=sc.nextInt();
+		
+		LoanException obj=new LoanException();
+		try {
+			obj.grantloan(salary);
+		} catch (SalaryException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}
+
+__________________________________________________________________________________________________
+___________________________________________________________________________________________________
+Q.2 WAP in java to create user defined exception which allows user to perform bank transaction.
+    1)if user try to withdraw amount greater than balance program must throw insufficient fund exception.
+    2)before withdraw or deposit user must enter pin  if pin is not not valid throw exception.
+    3)user can not deposit amount greater than 200000 lacs without pan details.if does not provided throw 
+      exception.
+
+
+public class InvalidBankException extends Exception {
+	public InvalidBankException(String s)
+	{
+		super(s);
+		
+	}
+public String tostring()
+{
+return "invalid bank transaction";	
+}
+}
+
+
+
+import java.util.Scanner;
+
+
+public class BankException {
+	int count=0;
+	public void AcceptPin(int p) throws InvalidBankException
+	{ 
+		while(p>0)
+		{
+			p=p/10;
+			
+			count++;
+		}
+		if(count!=4)
+		{
+			throw new InvalidBankException("invalid Pin :: please enter valid pin");
+		}
+	}
+	public void WithdrawAmount(float w,int b) throws InvalidBankException
+	{
+		if(w>b)
+		{
+			throw new InvalidBankException("Insufficient fund");
+		}
+	}
+	
+	public void Deposit(int d) throws InvalidBankException
+	{ 
+		int PanNumber;
+		int count1=0;
+		Scanner sc1=new Scanner(System.in);
+		
+		if(d<200000)
+		{
+			System.out.println("deposit sucessfully");
+		}
+		
+		
+		else if(d>=200000)
+		{
+			
+			System.out.println("enter pan number");
+			PanNumber=sc1.nextInt();
+			
+			while(PanNumber>0)
+			{
+				PanNumber=PanNumber/10;
+				count++;
+			}
+		}	
+			else if(count1!=10) 
+			 {
+				 throw new InvalidBankException("please enter correct pan details");
+				 
+			 }
+		
+				 System.out.println("transaction successfull");
+			 
+		
+
+		
+	}
+	
+	public static void main(String[] args) {
+
+		// TODO Auto-generated method stub
+		
+		int pin,deposit,balance=500000;
+		float withdraw;
+		int PAN1;
+		Scanner sc=new Scanner(System.in);
+		
+		BankException obj=new BankException();
+		
+		System.out.println("Enter pin ");
+		pin=sc.nextInt();
+		try {
+			obj.AcceptPin(pin);
+		} catch (InvalidBankException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("enter withdraw amount");
+		withdraw=sc.nextInt();
+		try {
+			obj.WithdrawAmount(withdraw, balance);
+		} catch (InvalidBankException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("enter deposit amount");
+		deposit=sc.nextInt();
+		
+		
+		try {
+			obj.Deposit(deposit);
+		} catch (InvalidBankException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+		
+	}
+
+}
+_____________________________________________________________________________________________________
+_____________________________________________________________________________________________________
+                                    ARRAY Programs
+Q.1 W.A.P using array to accept numbers and display the numbers in ascending order
+	
+	import java.util.Scanner;
+
+
+public class AssendingOrder {
+
+	public static void main(String[] args) 
+{
+    int n, temp;
+    Scanner s = new Scanner(System.in);
+    System.out.print("Enter no. of elements you want in array:");
+    n = s.nextInt();
+    int a[] = new int[n];
+    System.out.println("Enter all the elements:");
+    for (int i = 0; i < n; i++) 
+    {
+        a[i] = s.nextInt();
+    }
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = i + 1; j < n; j++) 
+        {
+            if (a[i] > a[j]) 
+            {
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+    System.out.print("Ascending Order:");
+    for (int i = 0; i < n; i++) 
+    {
+        System.out.print(a[i] + ",");
+    }
+  
+}
+}
+
+
+
+
+
+Q.2 W.A.P accept 10 number using array & display sum and average of 10 student.
+	
+	
+	import java.util.Scanner;
+
+
+public class AverageSum {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a[]= new int[10];
+		int sum=0,avg,i;
+		
+		System.out.println("Enter element in array");
+		Scanner sc=new Scanner(System.in);
+		for( i=0;i<10;i++)
+		{
+		a[i]=sc.nextInt();
+		}
+		for( i=0;i<10;i++)
+		{
+			sum=sum+a[i];
+		}
+		
+		System.out.println("sum of numbers"+sum);
+		avg=sum/9;
+		System.out.println("average of numbers"+avg);
+		
+
+	}
+
+}
+
+
+
+
+
+Q.3 W.A.P to accept mark of 10 student using array and display the name of highest scorer.
+
+	import java.util.Scanner;
+
+
+public class HighestScorer {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a[]=new int[10];
+		int i,highest;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter marks of 10 student");
+		for(i=0;i<10;i++)
+		{
+			a[i]=sc.nextInt();
+		}
+		highest=a[0];
+		for(i=1;i<10;i++)
+		{
+			if(a[i]>highest)
+			
+				highest=a[i];
+			
+		}
+	System.out.println("highest scorer"+highest);
+	}
+	
+
+}
+_______________________________________________________________________________________________
+________________________________________________________________________________________________
