@@ -1,0 +1,167 @@
+package h1b_prob8;
+
+
+
+
+import java.io.*;
+import java.util.TreeMap;
+
+import org.apache.hadoop.io.*;
+import org.apache.hadoop.mapreduce.*;
+import org.apache.hadoop.conf.*;
+import org.apache.hadoop.fs.*;
+import org.apache.hadoop.mapreduce.Reducer.Context;
+import org.apache.hadoop.mapreduce.lib.input.*;
+import org.apache.hadoop.mapreduce.lib.output.*;
+import org.apache.hadoop.util.*;
+
+public class Driver extends Configured implements Tool
+{
+   //Map class
+	
+	public static class MapClass extends Mapper<LongWritable,Text,Text,Text>	
+	{
+	public void map(LongWritable key,Text value,Context context)
+	{
+		
+		try
+		{
+		String[] str = value.toString().split("\t");
+		String str1 = str[4]; //job title 
+		String str2 = str[7]; //year 
+		String str3 =str[5]; //full or part time
+		String str4 = str[6];  //prevaling wage
+	
+			context.write(new Text(str1+","+str3), new Text(str4+","+str2));
+		
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+		}
+	}
+   
+	public static class ReduceClass extends Reducer<Text,Text,NullWritable,Text>
+	{
+		TreeMap<Double,Text> tm = new TreeMap<Double,Text>();
+		 
+		public void reduce(Text key,Iterable<Text>values,Context context) throws IOException, InterruptedException
+		{
+			long total=0;
+			String year="";
+			int count=0;
+			for(Text val:values)
+			{
+				int wage=0;
+				String data[]=val.toString().split(",");
+				if(data[0].contains("N"))
+				{
+					wage=0;
+				}
+				else wage=Integer.parseInt(data[0]);
+				total+=wage;
+				count++;
+				year=data[1];
+				
+				
+			}
+				double avg=(double)total*100/(double)count;
+				
+				String average=String.format("%.2f",avg);
+				String newValue=key+","+year+","+average;
+				//context.write(key,new Text(newValue));
+				tm.put(avg,new Text (newValue));
+                 
+			
+		}
+		public void cleanup(Context context) throws IOException, InterruptedException
+		{
+			for(Text t:tm.descendingMap().values())
+			{
+				context.write(NullWritable.get(),t);
+			}
+		}
+		
+		
+	}
+	
+   public static class MyPartitioner extends
+   Partitioner < Text, Text >
+   {
+      @Override
+      public int getPartition(Text key, Text value, int numReduceTasks)
+      {
+    	  
+    	  String record[] = value.toString().split(",");
+    	  int year=Integer.parseInt(record[1]);
+    	  
+  		if(year==2011)
+  		{
+  			return 0 % numReduceTasks;
+  		}
+  		else if(year==2012)
+  		 {
+  			return 1 % numReduceTasks;
+  		 }
+  	  else if(year==2013)
+  		 {
+  			return 2 % numReduceTasks;
+  		 }
+  	  else if(year==2014)
+  		 {
+  			return 3 % numReduceTasks;
+  		 }
+  	  else if(year==2015)
+  		 {
+  			return 4 % numReduceTasks;
+  		 }
+  	  else if(year==2016)
+  			{
+  			 return 5 % numReduceTasks;
+  			}
+  		else
+  		{
+    		return 6 % numReduceTasks;
+        }
+  	 }
+   }
+   
+   @Override
+   public int run(String[] arg) throws Exception
+   {
+      Configuration conf = getConf();
+		
+      Job job = new Job(conf, "topsal");
+      job.setJarByClass(Driver.class);
+		
+      FileInputFormat.setInputPaths(job, new Path(arg[0]));
+      FileOutputFormat.setOutputPath(job,new Path(arg[1]));
+		
+      job.setMapperClass(MapClass.class);
+		
+      job.setMapOutputKeyClass(Text.class);
+      job.setMapOutputValueClass(Text.class);
+      
+      //set partitioner statement
+		
+      job.setPartitionerClass(MyPartitioner.class);
+      job.setReducerClass(ReduceClass.class);
+      job.setNumReduceTasks(7);
+      job.setInputFormatClass(TextInputFormat.class);
+		
+      job.setOutputFormatClass(TextOutputFormat.class);
+      job.setOutputKeyClass(Text.class);
+      job.setOutputValueClass(Text.class);
+		
+      System.exit(job.waitForCompletion(true)? 0 : 1);
+      return 0;
+   }
+   
+   public static void main(String ar[]) throws Exception
+   {
+      int res = ToolRunner.run(new Configuration(), new Driver(),ar);
+      System.exit(0);
+   }
+}
